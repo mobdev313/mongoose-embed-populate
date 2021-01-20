@@ -59,7 +59,7 @@ Query.prototype.exec = function (op, cb) {
     op = null;
   } else cb = cb || (() => {});
 
-  return new mongoose.Promise(
+  return createMongoosePromise(
     function (resolve, reject) {
       _exec.call(this, op, function (err, docs) {
         if (err) return reject(err), cb(err);
@@ -240,6 +240,30 @@ function execute(model, docs, options, lean, cb) {
       if (resolvedCount === options.length) cb(null, docs);
     });
   }
+}
+
+
+/**
+ * Creates a Mongoose promise.
+ */
+function createMongoosePromise(resolver) {
+  var promise
+
+  // mongoose 5 and up
+  if (parseInt(mongoose.version) >= 5) {
+    promise = new mongoose.Promise(resolver)
+  }
+  // mongoose 4.1 and up
+  else if (mongoose.Promise.ES6) {
+    promise = new mongoose.Promise.ES6(resolver)
+  }
+  // backward compatibility
+  else {
+    promise = new mongoose.Promise
+    resolver(promise.resolve.bind(promise, null), promise.reject.bind(promise))
+  }
+
+  return promise
 }
 
 /**
