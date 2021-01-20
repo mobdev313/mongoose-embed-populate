@@ -1,4 +1,4 @@
-# Package: mongoose-sub-references-populate
+# Package: mongoose-embed-populate
 
 Package useful for populating references to sub documents.
 It will add a query builder helper and a model's method helper.
@@ -9,14 +9,14 @@ It will add a query builder helper and a model's method helper.
 # Install
 
 ```shell
-npm i mongoose-sub-references-populate
+npm i mongoose-embed-populate
 ```
 
 # Setup
 
 ```js
 // Including the library will add 'subPopulate' helper for query
-const subReferencesPopulate = require('mongoose-sub-references-populate');
+const subReferencesPopulate = require('mongoose-embed-populate');
 
 const TestSchema = new mongoose.Schema({});
 

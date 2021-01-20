@@ -1,6 +1,6 @@
 {
-  "name": "mongoose-sub-references-populate",
-  "version": "1.0.2",
+  "name": "mongoose-embed-populate",
+  "version": "1.0.3",
   "description": "Package useful for populating references to sub documents",
   "main": "index.js",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/QuantumGlitch/mongoose-sub-references-populate.git"
+    "url": "git+https://github.com/mobdev313/mongoose-sub-references-populate.git"
   },
-  "author": "QuantumGlitch",
+  "author": "mobdev313",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/QuantumGlitch/mongoose-sub-references-populate/issues"
+    "url": "https://github.com/mobdev313/mongoose-sub-references-populate/issues"
   },
-  "homepage": "https://github.com/QuantumGlitch/mongoose-sub-references-populate#readme",
+  "homepage": "https://github.com/mobdev313/mongoose-sub-references-populate#readme",
   "keywords": [
     "mongoose",
     "sub",
